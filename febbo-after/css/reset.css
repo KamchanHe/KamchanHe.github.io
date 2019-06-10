@@ -1,0 +1,43 @@
+*,::before,::after{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-webkit-appearance: none;
+	appearance: none;
+	-appearance: none;
+	outline: none;
+	border: none;
+}
+body{
+	font-size: 14px;
+	color: #333;
+	font-family: "microsoft Yahei";
+	width: 100%;
+	max-width: 500px;
+	min-width: 320px;
+	margin: 0 auto;
+}
+a{
+	color: #333;
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+input{
+	outline: none;
+	border: none;
+	resize: none;
+}
+.clearfix::before,.clearfix::after{
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+img{
+	display: block;
+	border: none;
+}

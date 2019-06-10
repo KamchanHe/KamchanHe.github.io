@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0 user-scalable=no">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+		}
+		body{
+			overflow: hidden;
+		}
+		.clearfix::before,.clearfix::after{
+		    content:"";
+		    height: 0;
+		    display: block;
+		    line-height:0;
+		    clear: both;
+		    visibility: hidden;
+		}
+		.box1{
+			width: 100%;
+			padding-bottom: 100%;
+			background: red;
+		}
+		.box2{
+			width: 100%;
+			padding-bottom: 61.8%;
+		}
+		.box2-1{
+			float: left;
+			width: 38.2%;
+			overflow: hidden;
+		}
+		.box2-2{
+			float: left;
+			width: 61.8%;
+			padding-bottom: 61.8%;
+			background: pink;
+		}
+		.box2-1-1{
+			width: 100%;
+			padding-bottom: 61.8%;
+		}
+		.box2-1-2{
+			width: 100%;
+			padding-bottom: 100%;
+			background: skyblue;
+		}
+		.box2-1-1-1{
+			float: left;
+			width: 38.2%;
+		}
+		.box2-1-1-2{
+			float: left;
+			width: 61.8%;
+			padding-bottom: 61.8%;
+			background: orange;
+		}
+		.box2-1-1-2-2{
+			width: 100%;
+			padding-bottom: 61.8%;
+		}
+		.box2-1-1-2-1{
+			width: 100%;
+			padding-bottom: 100%;
+			background: green;
+		}
+		.box2-1-1-2-1-1{
+			float: left;
+			width: 38.2%;
+			overflow: hidden;
+		}
+		.box2-1-1-2-1-2{
+			float: left;
+			width: 61.8%;
+			padding-bottom: 61.8%;
+			background: yellow;
+		}
+		.box2-1-1-2-1-1-1{
+			width: 100%;
+			padding-bottom: 61.8%;
+		}
+		.box2-1-1-2-1-1-2{
+			width: 100%;
+			padding-bottom: 100%;
+			background: purple;
+		}
+		.box2-1-1-2-1-1-1-1{
+			float: left;
+			width: 61.8%;
+			padding-bottom: 61.8%;
+			background: pink;
+		}
+		.box2-1-1-2-1-1-1-2{
+			float: left;
+			width: 38.2%;
+			padding-bottom: 61.8%;
+			background: black;
+		}
+	</style>
+</head>
+<body>
+	<div class="view">
+		<div class="view-in-top"></div>
+		<div class="view-in-bottom"></div>
+	</div>
+	<div class="box">
+		<div class="box1"></div>
+		<div class="box2">
+			<div class="box2-1 clearfix">
+				<div class="box2-1-1">
+					<div class="box2-1-1-2"></div>
+					<div class="box2-1-1-1">
+						<div class="box2-1-1-2-1"></div>
+						<div class="box2-1-1-2-2">
+							<div class="box2-1-1-2-1-1">
+								<div class="box2-1-1-2-1-1-1">
+									<div class="box2-1-1-2-1-1-1-1"></div>
+									<div class="box2-1-1-2-1-1-1-2"></div>
+								</div>
+								<div class="box2-1-1-2-1-1-2"></div>
+							</div>
+							<div class="box2-1-1-2-1-2"></div>
+						</div>
+					</div>
+				</div>
+				<div class="box2-1-2"></div>
+			</div>
+			<div class="box2-2"></div>
+		</div>
+	</div>
+	<div class="back"><a href="../index.html" style="color: black;text-decoration: none;">回到主页</a></div>
+	<script type="text/javascript">
+		var box=document.querySelector(".box");
+		function rotate1(){
+			var jiaodu=0,suofang=1,weiyi=0;
+			var rotate1=setInterval(function(){
+				jiaodu++;
+				suofang+=0.0068889;
+				weiyi+=0.422222222;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyi}%) translateY(-0%)`;
+				if (jiaodu==90) {clearInterval(rotate1)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate2(){
+			var jiaodu=90,suofang=1.62,weiyiY=0,weiyiX=36;
+			var rotate2=setInterval(function(){
+				jiaodu++;
+				suofang+=0.01111111;
+				weiyiY+=0.162222222;
+				weiyiX+=0.02222222;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-${weiyiY}%)`;
+				if (jiaodu==180) {clearInterval(rotate2)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate3(){
+			var jiaodu=180,suofang=2.618,weiyiX=38,weiyiY=14;
+			var rotate3=setInterval(function(){
+				jiaodu++;
+				suofang+=0.01797778;
+				weiyiX+=-0.16;
+				weiyiY+=0.00666667;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-${weiyiY}%)`;
+				if (jiaodu==270) {clearInterval(rotate3)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate4(){
+			var jiaodu=270,suofang=4.236,weiyiX=23.6,weiyiY=14.6;
+			var rotate4=setInterval(function(){
+				jiaodu++;
+				suofang+=0.03182222;
+				weiyiX+=0.00444444;
+				weiyiY+=-0.06555556;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-${weiyiY}%)`;
+				if (jiaodu==360) {clearInterval(rotate4)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate5(){
+			var jiaodu=360,suofang=7.1,weiyiX=24,weiyiY=8.7;
+			var rotate5=setInterval(function(){
+				jiaodu++;
+				suofang+=0.04444444;
+				weiyiX+=0.05666667;
+				weiyiY+=0.00444444;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-${weiyiY}%)`;
+				if (jiaodu==450) {clearInterval(rotate5)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate6(){
+			var jiaodu=450,suofang=11.1,weiyiX=29.1,weiyiY=9.1;
+			var rotate6=setInterval(function(){
+				jiaodu++;
+				suofang+=0.08444444;
+				weiyiX+=-0.00022222;
+				weiyiY+=0.02522222;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-${weiyiY}%)`;
+				if (jiaodu==540) {clearInterval(rotate6)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate7(){
+			var jiaodu=540,suofang=18.7,weiyiX=29.08,weiyiY=11.37;
+			var rotate7=setInterval(function(){
+				jiaodu++;
+				suofang+=0.11333333;
+				weiyiX+=-0.021;
+				weiyiY+=-0.00177778;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-${weiyiY}%)`;
+				if (jiaodu==630) {clearInterval(rotate7)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		// box.style.transform=`rotate(-720deg) scale(46.76) translateX(-26.93%) translateY(-10.39%)`;
+		function rotate8(){
+			var jiaodu=630,suofang=28.9,weiyiX=27.19,weiyiY=11.21;
+			var rotate8=setInterval(function(){
+				jiaodu++;
+				suofang+=0.19844444;
+				weiyiX+=-0.00288889;
+				weiyiY+=-0.00911111;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-${weiyiY}%)`;
+				if (jiaodu==720) {clearInterval(rotate8)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate11(){
+			var jiaodu=90,suofang=1.62,weiyi=38;
+			var rotate11=setInterval(function(){
+				jiaodu--;
+				suofang+=-0.0068889;
+				weiyi+=-0.422222222;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyi}%) translateY(-0%)`;
+				if (jiaodu==0) {clearInterval(rotate11)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate22(){
+			var jiaodu=180,suofang=2.62,weiyiY=14.6;
+			var rotate22=setInterval(function(){
+				jiaodu--;
+				suofang+=-0.01111111;
+				weiyiY+=-0.16222222;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-38%) translateY(-${weiyiY}%)`;
+				if (jiaodu==90) {clearInterval(rotate22)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate33(){
+			var jiaodu=270,suofang=4.236,weiyiX=23.6,weiyiY=14.6;
+			var rotate33=setInterval(function(){
+				jiaodu--;
+				suofang+=-0.01795556;
+				weiyiX+=0.16;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-14.6%)`;
+				if (jiaodu==180) {clearInterval(rotate33)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate44(){
+			var jiaodu=360,suofang=7.1,weiyiX=24,weiyiY=8.7;
+			var rotate44=setInterval(function(){
+				jiaodu--;
+				suofang+=-0.03182222;
+				weiyiX+=-0.00444444;
+				weiyiY+=0.06555556;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-${weiyiY}%)`;
+				if (jiaodu==270) {clearInterval(rotate44)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate55(){
+			var jiaodu=450,suofang=11.1,weiyiX=29.1,weiyiY=9.1;
+			var rotate55=setInterval(function(){
+				jiaodu--;
+				suofang+=-0.04444444;
+				weiyiX+=-0.05666667;
+				weiyiY+=-0.00444444;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-${weiyiY}%)`;
+				if (jiaodu==360) {clearInterval(rotate55)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate66(){
+			var jiaodu=540,suofang=18.7,weiyiX=29.08,weiyiY=11.37;
+			var rotate66=setInterval(function(){
+				jiaodu--;
+				suofang+=-0.08444444;
+				weiyiX+=0.00022222;
+				weiyiY+=-0.02522222;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-${weiyiY}%)`;
+				if (jiaodu==450) {clearInterval(rotate66)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate77(){
+			var jiaodu=630,suofang=28.9,weiyiX=27.19,weiyiY=11.21;
+			var rotate77=setInterval(function(){
+				jiaodu--;
+				suofang+=-0.11333333;
+				weiyiX+=0.021;
+				weiyiY+=0.00177778;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-${weiyiY}%)`;
+				if (jiaodu==540) {clearInterval(rotate77)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function rotate88(){
+			var jiaodu=720,suofang=46.76,weiyiX=26.93,weiyiY=10.39;
+			var rotate88=setInterval(function(){
+				jiaodu--;
+				suofang+=-0.19844444;
+				weiyiX+=0.00288889;
+				weiyiY+=0.00911111;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-${weiyiY}%)`;
+				if (jiaodu==630) {clearInterval(rotate88)}
+			},10)
+			box.style.transformOrigin="left 61.8%";
+		};
+		function backTop(){
+			var jiaodu=720,suofang=46.76,weiyiX=26.93,weiyiY=10.39;
+			var rotate88=setInterval(function(){
+				jiaodu--;
+				suofang+=-0.06364396;
+				weiyiX+=-0.03740278;
+				weiyiY+=-0.01443056;
+				// jiaodu+=-2;
+				// suofang+=-0.12988889;
+				// weiyiX+=-0.07480556;
+				// weiyiY+=-0.02886111;
+				box.style.transform=`rotate(-${jiaodu}deg) scale(${suofang}) translateX(-${weiyiX}%) translateY(-${weiyiY}%)`;
+				if (jiaodu==0) {
+					box.style.transform=`rotate(0deg) scale(1) translateX(0%) translateY(0%)`;
+					num=0;
+					clearInterval(rotate88)
+				}
+			},10)
+		}
+		// box.style.transform=`rotate(-90deg) scale(1.618) translateX(-36%) translateY(0%)`;
+		// box.style.transform=`rotate(-180deg) scale(2.618) translateX(-38%) translateY(-14%)`;
+		// box.style.transform=`rotate(-270deg) scale(4.236) translateX(-24%) translateY(-14.6%)`;
+		// box.style.transform=`rotate(-360deg) scale(7.1) translateX(-24%) translateY(-8.7%)`;
+		// box.style.transform=`rotate(-450deg) scale(11.1) translateX(-29.1%) translateY(-9.1%)`;
+		// box.style.transform=`rotate(-540deg) scale(18.7) translateX(-29.08%) translateY(-11.37%)`;
+		// box.style.transform=`rotate(-630deg) scale(28.9) translateX(-27.19%) translateY(-11.21%)`;
+		// box.style.transform=`rotate(-720deg) scale(46.76) translateX(-26.93%) translateY(-10.39%)`;
+		// box.style.transformOrigin="left 61.8%";
+		var start=0,end=0,isMove=true,num=0,hasMove=false;
+		box.addEventListener("touchstart",function(e){
+			// e.preventDefault();
+			start=e.touches[0].pageX;
+		})
+		box.addEventListener("touchmove",function(e){
+			e.preventDefault();
+			// isMove=true;
+			hasMove=true;
+			end=e.touches[0].pageX;
+		})
+		box.addEventListener("touchend",function(e){
+			// console.log(num)
+			// e.preventDefault();
+			// console.log(isMove)
+			if (isMove&&hasMove) {
+				isMove=false;
+				if (end<start) {
+					if(++num>8){
+						num=8;
+						return setTimeout(function(){isMove=true},1000)
+					}
+					else{
+						if (num==1) {
+							rotate1();
+						}
+						if (num==2) {
+							rotate2();
+						}
+						if (num==3) {
+							rotate3();
+						}
+						if (num==4) {
+							rotate4();
+						}
+						if (num==5) {
+							rotate5();
+						}
+						if (num==6) {
+							rotate6();
+						}
+						if (num==7) {
+							rotate7();
+						}
+						if (num==8) {
+							rotate8();
+						}
+					}
+				}
+				if (end>start) {
+					if(--num<0){
+						num=0;
+						return setTimeout(function(){isMove=true},1000)
+					}
+					else{
+						if (num==0) {
+							rotate11();
+						}
+						if (num==1) {
+							rotate22();
+						}
+						if (num==2) {
+							rotate33();
+						}
+						if (num==3) {
+							rotate44();
+						}
+						if (num==4) {
+							rotate55();
+						}
+						if (num==5) {
+							rotate66();
+						}
+						if (num==6) {
+							rotate77();
+						}
+						if (num==7) {
+							rotate88();
+						}
+					}
+				}
+				setTimeout(function(){
+					isMove=true;
+				},1000);
+			}
+			start=0;
+			end=0;
+			hasMove=false;
+		})
+		var backT=document.querySelector(".box2-1-1-2-1-1-1-2")
+		backT.onclick=function(){
+			console.log(1)
+			backTop();
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
