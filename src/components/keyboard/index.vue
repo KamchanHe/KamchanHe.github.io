@@ -219,7 +219,6 @@ export default {
 }
 .cus-board {
   font-size: 15px;
-  width: 100%;
   background: rgb(246, 247, 246);
   padding: 15px 5px 30px 5px;
   position: fixed;
@@ -281,7 +280,7 @@ export default {
   justify-content: center;
   .item,
   .action {
-    margin: 3px;
+    margin: 2.5px;
   }
 }
 </style>
