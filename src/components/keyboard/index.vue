@@ -14,13 +14,13 @@
     <!-- 点击键盘以外的区域隐藏键盘 -->
     <div @click.stop="hide" v-if="showKeyboard" class="bg"></div>
     <!-- 键盘区 -->
-    <div ref="cusBoard" v-if="showKeyboard" class="cus-board">
+    <div @dbclick="()=>{return false}" ref="cusBoard" v-if="showKeyboard" class="cus-board">
       <div v-for="(line, index) in keys" :key="'line' + index" class="letter-line">
         <!-- 收起键盘 -->
         <div v-if="index === keys.length - 1" @click.stop="hide" class="action">
           <img :src="require('@/assets/keyboard.png')" />
         </div>
-        <div @touchstart="touchStart" @touchend="touchEnd" v-for="key in line" :key="key" :data-text="key" class="item">{{ key }}</div>
+        <div @touchstart.stop="touchStart" @touchend.stop="touchEnd" v-for="key in line" :key="key" :data-text="key" class="item">{{ key }}</div>
         <!-- 删除 -->
         <div v-if="index === keys.length - 1" @click.stop="handleDel" class="action">
           <img :src="require('@/assets/delete.png')" />
@@ -146,7 +146,8 @@ export default {
      * @param {void}
      * @return {void}
      */
-    handleDel() {
+    handleDel(el) {
+      console.log(el)
       if (this.defaultVal && this.text.length === this.defaultVal.length && this.text.indexOf(this.defaultVal) === 0) {
         // 有默认开头 如果文本只有固定开头 没有任何输入 点击删除不做任何操作
         return;
